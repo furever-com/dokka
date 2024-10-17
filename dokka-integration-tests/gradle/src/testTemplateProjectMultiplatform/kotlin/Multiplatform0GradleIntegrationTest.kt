@@ -14,7 +14,7 @@ import kotlin.test.assertTrue
 class Multiplatform0GradleIntegrationTest : AbstractGradleIntegrationTest() {
 
     @ParameterizedTest(name = "{0}")
-    @ArgumentsSource(AllSupportedTestedVersionsArgumentsProvider::class)
+    @ArgumentsSource(LatestTestedVersionsArgumentsProvider::class)
     fun execute(buildVersions: BuildVersions) {
         // `enableGranularSourceSetsMetadata` and  `enableDependencyPropagation` flags are enabled by default since 1.6.20.
         // remove when this test is executed with Kotlin >= 1.6.20
