@@ -21,14 +21,12 @@ class Multiplatform0GradleIntegrationTest : AbstractGradleIntegrationTest() {
         val result = if (buildVersions.kotlinVersion < "1.6.20")
             createGradleRunner(
                 buildVersions,
-                "dokkaHtml",
-                "-Pkotlin.mpp.enableGranularSourceSetsMetadata=true",
-                "-Pkotlin.native.enableDependencyPropagation=false"
+                "dokkaGenerate",
             ).buildRelaxed()
         else
-            createGradleRunner(buildVersions, "dokkaHtml").buildRelaxed()
+            createGradleRunner(buildVersions, "dokkaGenerate").buildRelaxed()
 
-        result.shouldHaveTask(":dokkaHtml").shouldHaveOutcome(SUCCESS, FROM_CACHE)
+        result.shouldHaveTask(":dokkaGenerate").shouldHaveOutcome(SUCCESS, FROM_CACHE)
 
         val dokkaOutputDir = File(projectDir, "build/dokka/html")
         assertTrue(dokkaOutputDir.isDirectory, "Missing dokka output directory")

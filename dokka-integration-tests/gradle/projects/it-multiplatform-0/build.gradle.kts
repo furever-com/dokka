@@ -2,7 +2,7 @@
  * Copyright 2014-2024 JetBrains s.r.o. Use of this source code is governed by the Apache 2.0 license.
  */
 
-import org.jetbrains.dokka.gradle.DokkaTask
+//import org.jetbrains.dokka.gradle.DokkaTask
 import java.net.URL
 
 plugins {
@@ -38,13 +38,13 @@ kotlin {
     }
 }
 
-tasks.withType<DokkaTask>().configureEach {
-    dokkaSourceSets {
-        configureEach {
-            externalDocumentationLink {
-                url.set(URL("https://kotlinlang.org/api/kotlinx.coroutines/"))
-                //packageListUrl.set(URL("https://kotlinlang.org/api/kotlinx.coroutines/package-list"))
-            }
-        }
-    }
-}
+//tasks.withType<DokkaTask>().configureEach {
+//    dokkaSourceSets {
+//        configureEach {
+//            externalDocumentationLink {
+//                url.set(URL("https://kotlinlang.org/api/kotlinx.coroutines/"))
+//                //packageListUrl.set(URL("https://kotlinlang.org/api/kotlinx.coroutines/package-list"))
+//            }
+//        }
+//    }
+//}
